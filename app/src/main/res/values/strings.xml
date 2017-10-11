@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="score_text">Your score </string>
+    <string name="question_number_text">Question #</string>
+    <string name="hint_text">Make a choice </string>
+    <string name="check_button">Check</string>
+    <string name="answer_field">Enter your answer</string>
+    */
+    * Flags
+    /*
+    <string name="united_kingdom">Flag of the United Kingdom</string>
+    <string name="malaysia">Flag of Malaysia</string>
+    <string name="united_states">Flag of the United States</string>
+    <string name="russia">Flag of Russia</string>
+
+</resources>
