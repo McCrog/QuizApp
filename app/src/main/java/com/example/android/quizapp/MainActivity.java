@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
             RadioButton btn = (RadioButton) radioGroup.getChildAt(i);
             String radioButtonString = btn.getText().toString();
 
-            if (radioButtonString.toLowerCase().equals(answer) && btn.isChecked())
+            if (radioButtonString.toLowerCase().equals(answer.toLowerCase()) && btn.isChecked())
                 checked = true;
         }
         return checked;
