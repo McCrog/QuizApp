@@ -2,6 +2,7 @@ package com.example.android.quizapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -177,8 +178,8 @@ public class MainActivity extends AppCompatActivity {
     */
     private boolean checkingCheckbox(boolean[] answer) {
         boolean checked = false;
-        int countTrue = 1;
-        int count = 1;
+        int countTrue = 0;
+        int count = 0;
 
         CheckBox firstCheckBox = (CheckBox) findViewById(R.id.first_checkbox);
         CheckBox secondCheckBox = (CheckBox) findViewById(R.id.second_checkbox);
@@ -190,12 +191,18 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             if (answer[i])
                 countTrue++;
-            if (answer[i] == checkedCheckbox[i])
+            if (answer[i] && checkedCheckbox[i])
                 count++;
         }
 
         if (count == countTrue)
             checked = true;
+
+        Log.v("checkingCheckbox method", "count =" + count +
+                "\ncountTrue = " + countTrue +
+                "\nchecked = " + checked +
+                "\ncheckedCheckbox array = " + checkedCheckbox +
+                "\nanswer array = " + answer);
 
         return checked;
     }
