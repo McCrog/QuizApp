@@ -79,8 +79,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // TODO: write setQuestion method
-
     /*
     * The method changes the content depending on the number of the question.
     *
