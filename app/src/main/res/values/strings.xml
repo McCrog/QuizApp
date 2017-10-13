@@ -45,4 +45,10 @@
     <string name="united_states">Flag of the United States</string>
     <string name="russia">Flag of Russia</string>
 
+    */
+    * Final layout
+    /*
+    <string name="result_text"><xliff:g id="win" example="You win!">%s</xliff:g></string>
+    <string name="try_again_button_text">Try again</string>
+
 </resources>

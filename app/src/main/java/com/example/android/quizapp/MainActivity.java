@@ -2,7 +2,6 @@ package com.example.android.quizapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -94,11 +93,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
+    * The method starts the quiz from the beginning
+    */
+    public void restartGame(View view) {
+        score = 0;
+        question = 1;
+        changeContent(question);
+    }
+
+    /*
     * The method changes the content depending on the number of the question.
-    *
     */
     private void changeContent(int questionNumber) {
         switch (questionNumber) {
+            case 1:
+                setContentView(R.layout.activity_main);
+                display(questionNumber);
+                break;
             case 2:
                 setContentView(R.layout.checkbox_question);
                 display(questionNumber);
@@ -113,6 +124,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 5:
                 setContentView(R.layout.image_radio_button_question);
+                display(questionNumber);
+                break;
+            case 6:
+                setContentView(R.layout.final_layout);
                 display(questionNumber);
                 break;
         }
@@ -170,7 +185,27 @@ public class MainActivity extends AppCompatActivity {
                 questionString4.setText(getString(R.string.question_number_4));
                 break;
             }
+            case 6: {
+                TextView resultString = (TextView) findViewById(R.id.result_text_fiels);
+
+                // The variable questionNumberString is assigned an empty string for the correct operation of the application.
+                // A variable is declared at the beginning of the method and is called for all layers
+                // For the final layer is not required.
+                questionNumberString.setText("");
+
+                resultString.setText(getString(R.string.result_text, checkWon()));
+                break;
+            }
         }
+    }
+
+    /*
+    * The method checks the number of points scored and determines the victory or defeat
+    */
+    private String checkWon() {
+        if (score == 5)
+            return "You win!";
+        return "You lose";
     }
 
     /*
@@ -280,7 +315,6 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     * Method for checking the response in the EditText field.
-    *
     */
     private boolean checkingText(String answer) {
         boolean checked = false;
@@ -318,12 +352,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (count == countTrue)
             checked = true;
-
-        Log.v("checkingCheckbox method", "count =" + count +
-                "\ncountTrue = " + countTrue +
-                "\nchecked = " + checked +
-                "\ncheckedCheckbox array = " + checkedRadioButton.toString() +
-                "\nanswer array = " + answer.toString());
 
         return checked;
     }
