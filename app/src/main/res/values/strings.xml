@@ -1,13 +1,45 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Quiz App</string>
-    <string name="score_text">Your score </string>
-    <string name="question_number_text">Question #</string>
+    <string name="score_text">Your score <xliff:g id="score" example="1">%d</xliff:g></string>
+    <string name="question_number_text">Question #<xliff:g id="question" example="1">%d</xliff:g></string>
     <string name="hint_text">Make a choice </string>
     <string name="check_button">Check</string>
     <string name="answer_field">Enter your answer</string>
+
     */
-    * Flags
+    * Toast message for correct and incorrect answer
     /*
+    <string name="toast_correct_message">Who was the first president of the usa?</string>
+    <string name="toast_incorrect_message">Abraham Lincoln</string>
+
+    */
+    * Question #1. Who was the first president of the usa?
+    /*
+    <string name="question_number_1">Who was the first president of the usa?</string>
+    <string name="abraham_lincoln">Abraham Lincoln</string>
+    <string name="george_washington">George Washington</string>
+    <string name="thomas_jefferson">Thomas Jefferson</string>
+
+    */
+    * Question #2. Select all states that are members of the United States
+    /*
+    <string name="question_number_2">Select all states that are members of the United States</string>
+    <string name="alabama">Alabama</string>
+    <string name="new_mexico">New Mexico</string>
+    <string name="saint_petersburg">Saint Petersburg</string>
+    <string name="ohio">Ohio</string>
+
+    */
+    * Question #3. Who is the current president of usa?
+    /*
+    <string name="question_number_3">Who is the current president of usa?</string>
+    <string name="donald_trump">Donald Trump</string>
+
+    */
+    * Question #4.Flags description
+    /*
+    <string name="question_number_4">Select the USA flag</string>
     <string name="united_kingdom">Flag of the United Kingdom</string>
     <string name="malaysia">Flag of Malaysia</string>
     <string name="united_states">Flag of the United States</string>
