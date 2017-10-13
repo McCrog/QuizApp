@@ -198,12 +198,6 @@ public class MainActivity extends AppCompatActivity {
         if (count == countTrue)
             checked = true;
 
-        Log.v("checkingCheckbox method", "count =" + count +
-                "\ncountTrue = " + countTrue +
-                "\nchecked = " + checked +
-                "\ncheckedCheckbox array = " + checkedCheckbox +
-                "\nanswer array = " + answer);
-
         return checked;
     }
 
@@ -229,8 +223,8 @@ public class MainActivity extends AppCompatActivity {
     */
     private boolean checkingImageRadioButton(boolean[] answer) {
         boolean checked = false;
-        int countTrue = 1;
-        int count = 1;
+        int countTrue = 0;
+        int count = 0;
 
         RadioButton firstFlagRadioButton = (RadioButton) findViewById(R.id.first_image_radio_button);
         RadioButton secondFlagRadioButton = (RadioButton) findViewById(R.id.second_image_radio_button);
@@ -242,12 +236,18 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             if (answer[i])
                 countTrue++;
-            if (answer[i] == checkedRadioButton[i])
+            if (answer[i] && checkedRadioButton[i])
                 count++;
         }
 
         if (count == countTrue)
             checked = true;
+
+        Log.v("checkingCheckbox method", "count =" + count +
+                "\ncountTrue = " + countTrue +
+                "\nchecked = " + checked +
+                "\ncheckedCheckbox array = " + checkedRadioButton.toString() +
+                "\nanswer array = " + answer.toString());
 
         return checked;
     }
