@@ -10,13 +10,13 @@
     */
     * Toast message for correct and incorrect answer
     /*
-    <string name="toast_correct_message">Who was the first president of the usa?</string>
-    <string name="toast_incorrect_message">Abraham Lincoln</string>
+    <string name="toast_correct_message">Correct!</string>
+    <string name="toast_incorrect_message">Incorrect!</string>
 
     */
-    * Question #1. Who was the first president of the usa?
+    * Question #1. Who was the first president of the USA?
     /*
-    <string name="question_number_1">Who was the first president of the usa?</string>
+    <string name="question_number_1">Who was the first president of the USA?</string>
     <string name="abraham_lincoln">Abraham Lincoln</string>
     <string name="george_washington">George Washington</string>
     <string name="thomas_jefferson">Thomas Jefferson</string>
@@ -31,9 +31,9 @@
     <string name="ohio">Ohio</string>
 
     */
-    * Question #3. Who is the current president of usa?
+    * Question #3. Who is the current president of USA?
     /*
-    <string name="question_number_3">Who is the current president of usa?</string>
+    <string name="question_number_3">Who is the current president of USA?</string>
     <string name="donald_trump">Donald Trump</string>
 
     */
