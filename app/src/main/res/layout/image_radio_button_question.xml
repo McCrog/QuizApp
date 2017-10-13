@@ -44,6 +44,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:button="@null"
                 android:layout_weight="1"
                 android:background="@drawable/united_kingdom" />
@@ -65,6 +66,32 @@
                 android:button="@null"
                 android:layout_weight="1"
                 android:background="@drawable/russia" />
+=======
+                android:layout_weight="1"
+                android:background="@drawable/united_kingdom"
+                android:button="@null" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/malaysia"
+                android:button="@null" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/united_states"
+                android:button="@null" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/russia"
+                android:button="@null" />
+>>>>>>> dev
 
         </RadioGroup>
 
@@ -87,8 +114,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+<<<<<<< HEAD
             android:text="@string/check_button"
             android:onClick="checkAnswer"/>
+=======
+            android:onClick="checkAnswer"
+            android:text="@string/check_button" />
+>>>>>>> dev
     </RelativeLayout>
 
 </LinearLayout>

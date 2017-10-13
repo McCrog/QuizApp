@@ -36,8 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:gravity="center_horizontal"
+<<<<<<< HEAD
             android:textAppearance="?android:textAppearanceLarge"
             android:text="@string/result_text"
+=======
+            android:text="@string/result_text"
+            android:textAppearance="?android:textAppearanceLarge"
+>>>>>>> dev
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -51,7 +56,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+<<<<<<< HEAD
             android:text="@string/try_again_button_text"
             android:onClick="restartGame" />
+=======
+            android:onClick="restartGame"
+            android:text="@string/try_again_button_text" />
+>>>>>>> dev
     </RelativeLayout>
 </LinearLayout>
