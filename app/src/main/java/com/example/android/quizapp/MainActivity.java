@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    RadioButton oneImageRadioButton, twoImageRadioButton, threeImageRadioButton, fourImageRadioButton;
     /*
     * Variable
     */
     private int score = 0;
     private int question = 1;
-    RadioButton oneImageRadioButton, twoImageRadioButton, threeImageRadioButton, fourImageRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
