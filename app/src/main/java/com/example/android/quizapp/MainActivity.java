@@ -68,7 +68,19 @@ public class MainActivity extends AppCompatActivity {
             }
             case 4: {
                 boolean[] answer = {false, false, true, false};
-                if (checkingImageRadioButton(answer)) {
+                if (checkingRadioButtonWithImage(answer)) {
+                    score++;
+                    displayToast(true);
+                } else {
+                    displayToast(false);
+                }
+                question++;
+                changeContent(question);
+                break;
+            }
+            case 5: {
+                boolean[] answer = {false, false, true, false};
+                if (checkingRadioGroupWithImage(answer)) {
                     score++;
                     displayToast(true);
                 } else {
@@ -99,6 +111,10 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.image_question);
                 display(questionNumber);
                 break;
+            case 5:
+                setContentView(R.layout.image_radio_button_question);
+                display(questionNumber);
+                break;
         }
     }
 
@@ -112,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         questionNumberString.setText(getString(R.string.question_number_text, question));
 
         switch (questionNumber) {
-            case 1:
+            case 1: {
                 TextView questionString1 = (TextView) findViewById(R.id.question_text);
                 questionString1.setText(getString(R.string.question_number_1));
 
@@ -123,7 +139,8 @@ public class MainActivity extends AppCompatActivity {
                 secondRadioButton.setText(getString(R.string.george_washington));
                 thirdRadioButton.setText(getString(R.string.thomas_jefferson));
                 break;
-            case 2:
+            }
+            case 2: {
                 TextView questionString2 = (TextView) findViewById(R.id.question_text);
                 questionString2.setText(getString(R.string.question_number_2));
 
@@ -136,15 +153,23 @@ public class MainActivity extends AppCompatActivity {
                 thirdCheckBox.setText(getString(R.string.saint_petersburg));
                 fourthCheckBox.setText(getString(R.string.ohio));
                 break;
-            case 3:
+            }
+            case 3: {
                 TextView questionString3 = (TextView) findViewById(R.id.question_text);
                 questionString3.setText(getString(R.string.question_number_3));
                 break;
-            case 4:
+            }
+            case 4: {
                 TextView questionString4 = (TextView) findViewById(R.id.question_text);
                 questionString4.setText(getString(R.string.question_number_4));
                 radioButtonWithImageHandel();
                 break;
+            }
+            case 5: {
+                TextView questionString4 = (TextView) findViewById(R.id.question_text);
+                questionString4.setText(getString(R.string.question_number_4));
+                break;
+            }
         }
     }
 
@@ -199,7 +224,6 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     * The method displays a toast message
-    *
     */
     private void displayToast(boolean answer) {
         if (answer)
@@ -210,7 +234,6 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     * Method for checking the response in the RadioButton.
-    *
     */
     private boolean checkingRadioButton(String answer) {
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio_button_group);
@@ -229,7 +252,6 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     * Method for checking the response in the CheckBoxes.
-    *
     */
     private boolean checkingCheckbox(boolean[] answer) {
         boolean checked = false;
@@ -274,9 +296,8 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     * Method for checking the response in the RadioButton on image question.
-    *
     */
-    private boolean checkingImageRadioButton(boolean[] answer) {
+    private boolean checkingRadioButtonWithImage(boolean[] answer) {
         boolean checked = false;
         int countTrue = 0;
         int count = 0;
@@ -303,6 +324,33 @@ public class MainActivity extends AppCompatActivity {
                 "\nchecked = " + checked +
                 "\ncheckedCheckbox array = " + checkedRadioButton.toString() +
                 "\nanswer array = " + answer.toString());
+
+        return checked;
+    }
+
+    /*
+    * Method for checking the response in the RadioGroup on image question.
+    */
+    private boolean checkingRadioGroupWithImage(boolean[] answer) {
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio_button_image_group);
+
+        boolean checked = false;
+        int countTrue = 0;
+        int count = 0;
+
+        boolean[] checkedRadioButtonGroup = new boolean[4];
+
+        for (int i = 0; i < 4; i++) {
+            RadioButton btn = (RadioButton) radioGroup.getChildAt(i);
+            checkedRadioButtonGroup[i] = btn.isChecked();
+            if (answer[i])
+                countTrue++;
+            if (answer[i] && checkedRadioButtonGroup[i])
+                count++;
+        }
+
+        if (count == countTrue)
+            checked = true;
 
         return checked;
     }
