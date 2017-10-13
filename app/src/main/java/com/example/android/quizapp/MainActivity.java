@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     */
     private int score = 0;
     private int question = 1;
+    RadioButton oneImageRadioButton, twoImageRadioButton, threeImageRadioButton, fourImageRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +140,61 @@ public class MainActivity extends AppCompatActivity {
                 TextView questionString3 = (TextView) findViewById(R.id.question_text);
                 questionString3.setText(getString(R.string.question_number_3));
                 break;
+            case 4:
+                TextView questionString4 = (TextView) findViewById(R.id.question_text);
+                questionString4.setText(getString(R.string.question_number_4));
+                radioButtonWithImageHandel();
+                break;
         }
+    }
+
+    /*
+    * The method helps to handle radio button selection events.
+    * Due to the fact that the radio buttons are not children of the radio group,
+    * it is possible to select any of the four radio buttons.
+    * This method is to prevent this behavior.
+    */
+    private void radioButtonWithImageHandel() {
+        oneImageRadioButton = (RadioButton) findViewById(R.id.first_image_radio_button);
+        twoImageRadioButton = (RadioButton) findViewById(R.id.second_image_radio_button);
+        threeImageRadioButton = (RadioButton) findViewById(R.id.third_image_radio_button);
+        fourImageRadioButton = (RadioButton) findViewById(R.id.fourth_image_radio_button);
+
+        oneImageRadioButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                oneImageRadioButton.setChecked(true);
+                twoImageRadioButton.setChecked(false);
+                threeImageRadioButton.setChecked(false);
+                fourImageRadioButton.setChecked(false);
+            }
+        });
+
+        twoImageRadioButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                oneImageRadioButton.setChecked(false);
+                twoImageRadioButton.setChecked(true);
+                threeImageRadioButton.setChecked(false);
+                fourImageRadioButton.setChecked(false);
+            }
+        });
+
+        threeImageRadioButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                oneImageRadioButton.setChecked(false);
+                twoImageRadioButton.setChecked(false);
+                threeImageRadioButton.setChecked(true);
+                fourImageRadioButton.setChecked(false);
+            }
+        });
+
+        fourImageRadioButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                oneImageRadioButton.setChecked(false);
+                twoImageRadioButton.setChecked(false);
+                threeImageRadioButton.setChecked(false);
+                fourImageRadioButton.setChecked(true);
+            }
+        });
     }
 
     /*
